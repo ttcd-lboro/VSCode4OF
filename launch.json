@@ -8,15 +8,13 @@
             "name": "OF-Debug-LINUX",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${env:FOAM_USER_APPBIN}/${fileDirnameBasename}",//${fileBasenameNoExtension}",
-            //"program": "/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/bin/${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            "program": "${env:FOAM_USER_APPBIN}/${fileDirnameBasename}",
             "preLaunchTask": "rebuildAndCleancase",
             "args": [],
             "stopAtEntry": false,
 
             //////////////////////////////////// CHANGE THIS CASE FILE ////////////////////////////
-            //"cwd": "${env:FOAM_RUN}/damBreak_clsvofFoamEvap/",
-            "cwd": "/home/ttcd/OpenFOAM/ttcd-9/run/simpleBlock_clsvofFoamEvap/",
+            "cwd": "${userHome}/OpenFOAM/${env:USERNAME}-9/run/myCaseFile/",
             ////////////////////////////////////////////////////////////////////////////////////////
             "environment": [
                 {
@@ -28,7 +26,6 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb",
-            //"additionalSOLibSearchPath": "/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib", //doesnt work if remote ssh (internet source)
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -46,15 +43,12 @@
             "name": "OF-Debug-LINUX-NoBuild",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${env:FOAM_USER_APPBIN}/clsvofFoamEvap",//${fileDirnameBasename}",//${fileBasenameNoExtension}",
-            //"program": "/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/bin/${fileDirnameBasename}",//${fileBasenameNoExtension}",
-            //"preLaunchTask": "rebuildAndCleancase",
+            "program": "${env:FOAM_USER_APPBIN}/${fileDirnameBasename}",
             "args": [],
             "stopAtEntry": false,
 
             //////////////////////////////////// CHANGE THIS CASE FILE ////////////////////////////
-            //"cwd": "${env:FOAM_RUN}/damBreak_clsvofFoamEvap/",
-            "cwd": "/home/ttcd/OpenFOAM/ttcd-9/run/simpleBlock_clsvofFoamEvap/",
+             "cwd": "${userHome}/OpenFOAM/${env:USERNAME}-9/run/myCaseFile/",
             ////////////////////////////////////////////////////////////////////////////////////////
             "environment": [
                 {
@@ -66,7 +60,6 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb",
-            //"additionalSOLibSearchPath": "/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib", //doesnt work if remote ssh (internet source)
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -84,27 +77,24 @@
             "name": "OF-Debug-WINDOWS",
             "type": "cppdbg",
             "request": "launch",
-            //"program": "${env:FOAM_USER_APPBIN}/${fileDirnameBasename}",//${fileBasenameNoExtension}",
-            "program": "/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/bin/${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            "program": "/home/${env:USERNAME}/OpenFOAM/${env:USERNAME}-9/platforms/linux64GccDPInt32Debug/bin/${fileDirnameBasename}",//${fileBasenameNoExtension}",
             "preLaunchTask": "rebuildAndCleancase",
             "args": [],
             "stopAtEntry": false,
 
             //////////////////////////////////// CHANGE THIS CASE FILE ////////////////////////////
-            //"cwd": "${env:FOAM_RUN}/damBreak_clsvofFoamEvap/",
-            "cwd": "/home/ttcd/OpenFOAM/ttcd-9/run/simpleBlock_clsvofFoamEvap/",
+            "cwd": "/home/${env:USERNAME}/OpenFOAM/${env:USERNAME}-9/run/[CASEFILE]/",
             ////////////////////////////////////////////////////////////////////////////////////////
             "environment": [
                 {
                     "name": "LD_LIBRARY_PATH",
-                    "value": "${env:LD_LIBRARY_PATH}:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib/openmpi-system/:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib:/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/lib"
+                    "value": "${env:LD_LIBRARY_PATH}:/home/${env:USERNAME}/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib/openmpi-system/:/home/${env:USERNAME}/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib:/home/${env:USERNAME}/OpenFOAM/${env:USERNAME}-9/platforms/linux64GccDPInt32Debug/lib"
                 }
             ],
             
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb",
-            //"additionalSOLibSearchPath": "/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib", //doesnt work if remote ssh (internet source)
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -120,13 +110,6 @@
         }
 
     ]
-    /*"variables": {
-        "myAdditionalProperty": {
-            "Windows": "${env:LD_LIBRARY_PATH}:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib/openmpi-system/:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib:/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/lib"
-            //"Linux": "${env:LD_LIBRARY_PATH}"
-        }
-    }
-    */
 }
 
 
