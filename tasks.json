@@ -4,7 +4,7 @@
           {
             "label": "readIncludesCleanAndBuild",
             "dependsOrder": "sequence",
-            "dependsOn": ["readIncludePaths","rebuildAndCleancase"],
+            "dependsOn": ["readIncludePaths","rebuild"],
             "group": {
               "kind": "build",
               "isDefault": true
@@ -13,8 +13,8 @@
         },
         {
             "type": "shell",
-            "label": "cleanAndBuild",
-            "command": "source /home/ttcd/OpenFOAM/OpenFOAM-9/etc/bashrc && wclean && clear && wmake", //
+            "label": "rebuild",
+            "command": "source ${userHome}/OpenFOAM/OpenFOAM-9/etc/bashrc && clear && ./Allwclean && ./Allwmake",
             "args": [],
             "problemMatcher": [
                 "$gcc"
@@ -24,57 +24,6 @@
                 "isDefault": true
             },
             "detail": ""
-        },
-        {
-            "type": "shell",
-            "label": "rebuildAndCleancase",
-            "command": "source /home/ttcd/OpenFOAM/OpenFOAM-9/etc/bashrc && clear && ./Allwclean && ./Allwmake && /home/ttcd/OpenFOAM/ttcd-9/run/simpleBlock_clsvofFoamEvap/Allcleanandprep", //&& wclean 
-            "args": [],
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": ""
-        },
-        {
-            "type": "shell",
-            "label": "runDambreakWindowsPARALLEL",
-            //"command": "wmake",
-            "command": "source /home/ttcd/OpenFOAM/OpenFOAM-9/etc/bashrc && cd /home/ttcd/OpenFOAM/ttcd-9/run/damBreak_clsvofFoamEvap && ./Allclean && ./Allrunpar",
-            "args": [],
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": ""
-        },
-        {
-            "type": "shell",
-            "label": "runDambreakWindowsSERIAL",
-            //"command": "wmake",
-            "command": "source /home/ttcd/OpenFOAM/OpenFOAM-9/etc/bashrc && cd /home/ttcd/OpenFOAM/ttcd-9/run/damBreak_clsvofFoamEvap && ./Allclean && ./Allrun",
-            "args": [],
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": ""
-        },
-        {
-            "label": "SetAdditionalProperty",
-            "type": "shell",
-            "command": "bash",
-            "args": ["/home/ttcd/OpenFOAM/ttcd-9/applications/solvers/multiphase/clsvofFoamEvap/.vscode/set_additional_property.sh"],
-            "problemMatcher": []
         },
         {
             "label": "readIncludePaths",
@@ -84,7 +33,6 @@
               "reveal": "always",
               "panel": "new"
             },
-            //"problemMatcher": []
             "problemMatcher": {
                 "owner": "myTaskOutput",
                 "fileLocation": ["relative", "${workspaceFolder}"],
