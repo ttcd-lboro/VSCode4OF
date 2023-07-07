@@ -1,0 +1,134 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "OF-Debug-LINUX",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${env:FOAM_USER_APPBIN}/${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            //"program": "/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/bin/${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            "preLaunchTask": "rebuildAndCleancase",
+            "args": [],
+            "stopAtEntry": false,
+
+            //////////////////////////////////// CHANGE THIS CASE FILE ////////////////////////////
+            //"cwd": "${env:FOAM_RUN}/damBreak_clsvofFoamEvap/",
+            "cwd": "/home/ttcd/OpenFOAM/ttcd-9/run/simpleBlock_clsvofFoamEvap/",
+            ////////////////////////////////////////////////////////////////////////////////////////
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "${env:LD_LIBRARY_PATH}" 
+                }
+            ],
+        
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            //"additionalSOLibSearchPath": "/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib", //doesnt work if remote ssh (internet source)
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "OF-Debug-LINUX-NoBuild",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${env:FOAM_USER_APPBIN}/clsvofFoamEvap",//${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            //"program": "/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/bin/${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            //"preLaunchTask": "rebuildAndCleancase",
+            "args": [],
+            "stopAtEntry": false,
+
+            //////////////////////////////////// CHANGE THIS CASE FILE ////////////////////////////
+            //"cwd": "${env:FOAM_RUN}/damBreak_clsvofFoamEvap/",
+            "cwd": "/home/ttcd/OpenFOAM/ttcd-9/run/simpleBlock_clsvofFoamEvap/",
+            ////////////////////////////////////////////////////////////////////////////////////////
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "${env:LD_LIBRARY_PATH}" 
+                }
+            ],
+        
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            //"additionalSOLibSearchPath": "/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib", //doesnt work if remote ssh (internet source)
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "OF-Debug-WINDOWS",
+            "type": "cppdbg",
+            "request": "launch",
+            //"program": "${env:FOAM_USER_APPBIN}/${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            "program": "/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/bin/${fileDirnameBasename}",//${fileBasenameNoExtension}",
+            "preLaunchTask": "rebuildAndCleancase",
+            "args": [],
+            "stopAtEntry": false,
+
+            //////////////////////////////////// CHANGE THIS CASE FILE ////////////////////////////
+            //"cwd": "${env:FOAM_RUN}/damBreak_clsvofFoamEvap/",
+            "cwd": "/home/ttcd/OpenFOAM/ttcd-9/run/simpleBlock_clsvofFoamEvap/",
+            ////////////////////////////////////////////////////////////////////////////////////////
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "${env:LD_LIBRARY_PATH}:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib/openmpi-system/:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib:/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/lib"
+                }
+            ],
+            
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            //"additionalSOLibSearchPath": "/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib", //doesnt work if remote ssh (internet source)
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+
+    ]
+    /*"variables": {
+        "myAdditionalProperty": {
+            "Windows": "${env:LD_LIBRARY_PATH}:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib/openmpi-system/:/home/ttcd/OpenFOAM/OpenFOAM-9/platforms/linux64GccDPInt32Debug/lib:/home/ttcd/OpenFOAM/ttcd-9/platforms/linux64GccDPInt32Debug/lib"
+            //"Linux": "${env:LD_LIBRARY_PATH}"
+        }
+    }
+    */
+}
+
+
+
+

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": ["${env:WM_PROJECT_DIR}/src/OpenFOAM/lnInclude","lninclude",".","${env:FOAM_SRC}/transportModels/lnInclude","${env:FOAM_SRC}/MomentumTransportModels/momentumTransportModels/lnInclude","${env:FOAM_SRC}/MomentumTransportModels/incompressible/lnInclude","${env:FOAM_SRC}/finiteVolume/lnInclude","${env:FOAM_SRC}/dynamicMesh/lnInclude","${env:FOAM_SRC}/dynamicFvMesh/lnInclude","${env:FOAM_SRC}/meshTools/lnInclude","${env:FOAM_SRC}/sampling/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/VOF/threePhaseInterfaceProperties/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/VOF/incompressibleThreePhaseMixture/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/VOF/immiscibleIncompressibleThreePhaseMixture/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/LS/threePhaseMixtureLS/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/LS/threePhaseInterfacePropertiesLS/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/LS/incompressibleThreePhaseMixtureLS/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/LS/immiscibleIncompressibleThreePhaseMixtureLS/lnInclude","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/threePhaseChange/threePhaseChangeModel","${env:WM_PROJECT_USER_DIR}/src/threePhaseModels/threePhaseChange/noThreePhaseChange","${env:FOAM_SRC}/twoPhaseModels/twoPhaseMixture/lnInclude"],     
+            "defines": [],
+            "compilerPath": "/software/intel/2020-update3/compilers_and_libraries_2020.3.275/linux/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
